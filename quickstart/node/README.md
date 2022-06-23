@@ -2,7 +2,7 @@
 
 브랜드페이 JavaScript SDK를 이용해 자체 간편결제를 구축할 수 있는 Node.js 샘플 프로젝트입니다.
 
-샘플 프로젝트를 사용한 브랜드페이 연동 방법은 [브랜드페이 UI 연동하기](https://docs.tosspayments.com/guides/brandpay/integration)에서 확인하세요.
+샘플 프로젝트를 사용한 브랜드페이 연동 방법은 [브랜드페이 연동하기](https://docs.tosspayments.com/guides/brandpay/integration)에서 확인하세요.
 
 ## 준비하기
 
