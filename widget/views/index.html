@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <title>브랜드페이 위젯 샘플 프로젝트</title>
+
+    <!-- BrandPay SDK script 추가 -->
+    <script src="https://js.tosspayments.com/v1/brandpay"></script>
+  </head>
+
+  <body>
+    <form id="payment-form">
+      <div class="wrapper vertical">
+        <div id="payment-methods-widget"></div>
+        <button id="submit" type="primary" class="button">결제하기</button>
+      </div>
+    </form>
+    <script>
+      const clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq';
+      const customerKey = 'customer123';
+
+      // brandpay 초기화
+      const brandpay = BrandPay(clientKey, customerKey, {
+        redirectUrl: window.location.origin + '/callback-auth',
+      });
+
+      const paymentParams = {
+        orderId: String(Math.random()).substring(2), // 주문에 대한 고유한 ID 값
+        orderName: '생수 외 1건', // 결제에 대한 주문명
+        successUrl: window.location.origin + '/success',
+        failUrl: window.location.origin + '/fail',
+      };
+
+      let widget;
+
+      initialize();
+
+      document.querySelector('#payment-form').addEventListener('submit', handleSubmit);
+
+      async function initialize() {
+        // UI를 그리기 위한 위젯 객체 초기화
+        widget = brandpay.widget({ amount: 1000 });
+
+        // 결제 수단을 렌더링 할 수 있는 위젯 생성
+        const paymentMethods = widget.paymentMethods('payment');
+
+        // 결제 수단 렌더링
+        paymentMethods.render('#payment-methods-widget', {
+          methodType: '카드', // 위젯에서 보여줄 수 있는 결제 수단 선택
+          // methodId: 'METHOD_ID', // 위젯에서 기본 결제 수단으로 선택할 결제 수단 ID
+          ui: { // 위젯 UI에서 변경할 수 있는 옵션
+            promotionSection: {
+              summary: {
+                visible: true,
+              },
+              description: {
+                visible: true,
+                defaultOpen: true,
+              },
+            },
+          },
+        });
+      }
+
+      // 결제 진행
+      async function handleSubmit(e) {
+        e.preventDefault();
+
+        await brandpay.requestPayment({
+          widget,
+          ...paymentParams,
+        });
+      }
+    </script>
+  </body>
+</html>
