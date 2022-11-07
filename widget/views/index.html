@@ -12,14 +12,12 @@
 
   <body>
     <form id="payment-form">
-      <div class="wrapper vertical">
-        <div id="payment-methods-widget"></div>
-        <button id="submit" type="primary" class="button">결제하기</button>
-      </div>
+      <div id="payment-methods-widget"></div>
+      <button id="submit" type="primary" class="button">결제하기</button>
     </form>
     <script>
       const clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq';
-      const customerKey = 'customer123';
+      const customerKey = 'CUSTOMER_KEY'; // 상점에서 고객을 구분하기 위해 발급한 고객의 고유 ID로 변경하세요.
 
       // brandpay 초기화
       const brandpay = BrandPay(clientKey, customerKey, {
@@ -40,7 +38,7 @@
       document.querySelector('#payment-form').addEventListener('submit', handleSubmit);
 
       async function initialize() {
-        // UI를 그리기 위한 위젯 객체 초기화
+        // 위젯을 그리기 위한 widget 객체 초기화
         widget = brandpay.widget({ amount: 1000 });
 
         // 결제 수단을 렌더링 할 수 있는 위젯 생성
