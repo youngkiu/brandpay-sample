@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tom Kim",
+  "author": "Hayoung Kim, Juyeon Han",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
