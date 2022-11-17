@@ -29,7 +29,7 @@ async function initialize() {
     ui: {
       promotionSection: {
         summary: {
-          visible: false,
+          visible: true,
         },
         description: {
           visible: true,
