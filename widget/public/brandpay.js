@@ -22,7 +22,7 @@ initialize();
 
 async function initialize() {
   // 결제 수단 위젯 객체 초기화
-  paymentMethodsWidget = brandpay.createPaymentMethodsWidget({ amount: 1000 });
+  paymentMethodsWidget = brandpay.createPaymentMethodsWidget({ amount: 50000 });
 
   // 결제 수단 위젯 렌더
   paymentMethodsWidget.render('#payment-methods-widget', {
@@ -49,7 +49,7 @@ document.querySelector('#button').addEventListener('click', updateAmount);
 // 결제 금액 업데이트
 async function updateAmount(e) {
   e.preventDefault();
-  paymentMethodsWidget.updateAmount(50000);
+  paymentMethodsWidget.updateAmount(45000);
 }
 
 // 결제 하기
