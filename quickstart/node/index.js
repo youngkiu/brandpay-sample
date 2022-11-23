@@ -50,8 +50,10 @@ app.get('/callback-auth', async (req, res) => {
 // 최종 결제 승인
 app.post('/confirm-payment', async (req, res) => {
   await axios.post(
-    `https://api.tosspayments.com/v1/payments/${encodeURIComponent(req.body.paymentKey)}`,
+    `https://api.tosspayments.com/v1/brandpay/payments/confirm`,
     {
+      paymentKey: req.body.paymentKey,
+      customerKey: req.body.customerKey,
       orderId: req.body.orderId,
       amount: req.body.amount,
     },
