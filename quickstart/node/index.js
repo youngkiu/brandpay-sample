@@ -53,7 +53,7 @@ app.post('/confirm-payment', async (req, res) => {
     await axios.post(
       `https://api.tosspayments.com/v1/brandpay/payments/confirm`,
       {
-        // customerKey: req.body.customerKey,
+        customerKey: req.body.customerKey,
         paymentKey: req.body.paymentKey,
         orderId: req.body.orderId,
         amount: req.body.amount,
