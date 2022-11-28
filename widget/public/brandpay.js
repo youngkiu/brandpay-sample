@@ -11,13 +11,6 @@ const brandpay = BrandPay(clientKey, customerKey, {
 // 결제 위젯 객체
 let paymentMethodsWidget = null;
 
-const paymentParams = {
-  orderId: 'ORDER_ID', // 주문에 대한 고유한 ID 값
-  orderName: '생수 외 1건', // 결제에 대한 주문명
-  successUrl: window.location.origin + '/success',
-  failUrl: window.location.origin + '/fail',
-};
-
 initialize();
 
 async function initialize() {
@@ -64,8 +57,6 @@ async function handleSubmit(e) {
     orderName: '생수 외 1건', // 결제에 대한 주문명
     successUrl: window.location.origin + '/success',
     failUrl: window.location.origin + '/fail',
-    ...widgetPaymentParams,
-    ...paymentParams,
     ...widgetPaymentParams,
   });
 }
