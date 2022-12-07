@@ -2,7 +2,7 @@
 
 브랜드페이 JavaScript SDK를 이용해 결제 수단을 등록하고 선택하는 UI를 간편하게 구축할 수 있는 샘플 프로젝트입니다.
 
-<!-- 샘플 프로젝트를 사용한 브랜드페이 연동 방법은 [위젯 연동하기]()에서 확인하세요. -->
+샘플 프로젝트를 사용한 브랜드페이 연동 방법은 [브랜드페이 위젯 연동 문서](https://docs.tosspayments.com/guides/brandpay/widget)에서 확인하세요.
 
 ## 준비하기
 
@@ -12,8 +12,6 @@
 $ node -v
 $ v16.15.1
 ```
-
-<!-- ### Node.js 설치하기 -->
 
 [Node.js 홈페이지](https://nodejs.org/ko/download/)에서 환경에 맞는 인스톨러를 다운로드 하거나 [nvm](https://github.com/nvm-sh/nvm#about)(Node Version Manager)을 사용해서 설치하세요.
 
@@ -51,7 +49,7 @@ $ node index.js # 서버 실행
 
 샘플 프로젝트가 성공적으로 실행되면 아래와 같은 화면을 확인할 수 있습니다.
 
-<!-- ![페이지 예시 이미지](https://static.tosspayments.com/docs/brandpay/integration/checkout.png) -->
+![페이지 예시 이미지](https://static.tosspayments.com/docs/brandpay/widget-1.png)
 
 ## 인증
 
