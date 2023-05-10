@@ -35,7 +35,7 @@ $ nvm install {NODE_VERSION}
 
 ```sh
 $ git clone https://github.com/tosspayments/brandpay-sample # 샘플 프로젝트 클론
-$ cd brandpay-sample
+$ cd brandpay-sample/widget/node
 ```
 
 의존성 패키지를 다운로드하고 서버를 실행합니다.
