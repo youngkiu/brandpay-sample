@@ -1,6 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express()
 const port = 3000
 
@@ -9,8 +10,9 @@ const port = 3000
 
 // [TODO] 아래 키는 테스트용 시크릿 키입니다. 계정 설정이 진행된 후에는 내 상점의 키 값으로 변경하세요. 
 // [NOTE] 시크릿 키는 외부에 노출되어서는 안됩니다.
-const SECRET_KEY = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'
+const SECRET_KEY = 'test_sk_OALnQvDd2VJyw0GynAn3Mj7X41mN'
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use('/static', express.static('public'));
 

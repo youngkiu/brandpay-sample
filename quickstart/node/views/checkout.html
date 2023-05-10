@@ -15,16 +15,16 @@
       // 문서: https://docs.tosspayments.com/guides/brandpay/integration#api-키-설정-및-sdk-준비
       
       // [TODO] 아래 키는 테스트용 클라이언트 키입니다. 계정 설정이 진행된 후에는 내 상점의 키 값으로 변경하세요.
-      var clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq'
+      var clientKey = 'test_ck_OEP59LybZ8Byqe2RmGQr6GYo7pRe'
       // [TODO] 상점에서 고객을 구분하기 위해 발급한 고객의 고유 ID로 변경하세요.
-      var customerKey = 'CUSTOMER_KEY'
+      var customerKey = 'test_CUSTOMER_KEY'
       // [TODO] 상점에서 주문 건에 대해 발급한 고유 ID로 변경하세요.
-      var orderId = 'ORDER_ID'
+      var orderId = 'test_ORDER_ID' + Date.now().toString()
 
       // BrandPay 객체 초기화
       var brandpay = BrandPay(clientKey, customerKey, {
         // [TODO] 상점 개발 정보 페이지에 추가한 리다이렉트 URL이 있다면 아래 값을 변경하세요.
-        redirectUrl: 'http://localhost:3000/callback-auth'
+        redirectUrl: 'https://2679-112-151-155-62.ngrok-free.app/callback-auth'
       })
      
       function requestPayment() {
@@ -49,9 +49,10 @@
               console.log('사용자 취소')
             } else {
               console.log('기타 에러 상황', err.code, err.message)
+              // 기타 에러 상황 NOT_REGISTERED_REDIRECT_URL 리다이렉트 URL이 등록되지 않았습니다. 개발정보 페이지에서 등록해주세요.
 
               // 결제 실패 페이지(/views/fail)로 리다이렉트
-              window.location.href = 'http://localhost:3000/fail'
+              // window.location.href = 'http://localhost:3000/fail'
             }
           })
       }
